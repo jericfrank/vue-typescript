@@ -2,7 +2,7 @@ import { ActionContext } from 'vuex';
 import axios from 'axios';
 
 import { RootState } from '@/entity';
-import { Todos, TodosState } from '@/entity/Todos';
+import { Todo, TodosState } from '@/entity/Todos';
 
 const state: TodosState = {
   todos: [],
@@ -21,7 +21,7 @@ const actions = {
 };
 
 const mutations = {
-  setTodos: (s: TodosState, todos: Todos[]) => {
+  setTodos: (s: TodosState, todos: Todo[]) => {
     s.todos = todos;
   },
 };

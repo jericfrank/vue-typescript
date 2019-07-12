@@ -9,7 +9,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 
-import { Todos } from '@/entity/Todos';
+import { Todo } from '@/entity/Todos';
 import Header from '@/components/Header.vue';
 
 @Component({
@@ -18,7 +18,7 @@ import Header from '@/components/Header.vue';
   },
 })
 export default class Home extends Vue {
-  @Getter('allTodos') todos!: Todos[];
+  @Getter('allTodos') todos!: Todo[];
 
   @Action('getTodos') getTodosAction: any;
 

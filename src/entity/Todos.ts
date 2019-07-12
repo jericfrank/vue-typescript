@@ -1,7 +1,7 @@
-export interface Todos {
+export interface Todo {
   id: number,
 }
 
 export interface TodosState {
-  todos: Todos[],
+  todos: Todo[],
 }
