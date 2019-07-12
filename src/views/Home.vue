@@ -20,7 +20,7 @@ import Header from '@/components/Header.vue';
 export default class Home extends Vue {
   @Getter('allTodos') todos!: Todo[];
 
-  @Action('getTodos') getTodosAction: any;
+  @Action('getTodos') getTodosAction!: () => void;
 
   title: string = 'Home View';
 
