@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vue demo</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="../../../../build/scheduler.umd.js?433953"></script>
+	<link rel="stylesheet" href="../../../../build/scheduler.stockholm.css?433953" id="bryntum-theme">
+	<link rel="stylesheet" href="resources/app.css?433953">
+</head>
+
+<body>
+	<div id="app">
+		<header>
+			<h1><a href="../../..">Vue demo</a></h1>
+			<label class="sel-event">Selected event: <span>{{ selectedEvent || 'None' }}</span></label>
+			<div class="barmargin">
+				<label>Barmargin:</label>
+				<input min=0 max=10 type="number" v-model.number="barMargin">
+			</div>
+			<button @click="addEvent" class="add"><i class="b-fa b-fa-plus"></i></button>
+			<button class="red" @click="removeEvent" :disabled="selectedEvent == ''"><i class="b-fa b-fa-trash"></i></button>
+		</header>
+		<scheduler
+				ref="scheduler"
+				:time-ranges-feature="true"
+				:columns="columns"
+				:row-height=60
+				:bar-margin="barMargin"
+				:events="events"
+				:resources="resources"
+				:time-ranges="timeRanges"
+				:start-date="startDate"
+				:end-date="endDate"
+				:event-renderer="eventRenderer"
+				view-preset="hourAndDay"
+				event-style="colored"
+				@eventselectionchange="onEventSelectionChange"
+		>
+			</scheduler>
+	</div>
+	<script src="components/scheduler.js?433953"></script>
+	<script src="app.js?433953"></script>
+</body>
+
+</html>
